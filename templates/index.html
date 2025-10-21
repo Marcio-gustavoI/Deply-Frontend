@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planeja SJC</title>
+    <!-- Este link de CSS já estava correto! -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    
+    <!-- Linkamento da estilazação CSS -->
+    <!-- CORRIGIDO: Usando url_for para o favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/brasao_64x64.png') }}">
+</head>
+
+<body>
+    <header>
+        <!-- CORRIGIDO: Link do logo aponta para a rota principal 'index' -->
+        <a href="{{ url_for('index') }}">
+            <!-- CORRIGIDO: Usando url_for para a imagem do logo -->
+            <img id="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="logo">
+        </a>
+        <nav>
+            <ul class="menu">
+                <!-- Estes links já estavam corretos! -->
+                <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+                <li><a href="{{ url_for('mapa') }}">Mapa</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Principal -->
+        <section class="introducao">
+            <h1>Bem-Vindo ao Planeja SJC!</h1>
+            <p>Aqui, você encontrará uma ampla gama de recursos para explorar e compreender
+                a dinâmica da nossa cidade. Nossa plataforma oferece mapas interativos que permitem
+                visualizar diferentes aspectos do espaço urbano, desde a infraestrutura até as áreas
+                verdes, ajudando você a entender melhor o ambiente em que vive.
+                Além disso, disponibilizamos dados demográficos detalhados, que fornecem uma visão
+                abrangente sobre a população, suas características e necessidades. Esses dados são
+                essenciais para que cidadãos, planejadores urbanos e gestores públicos possam tomar
+                decisões informadas e embasadas.</p>
+        </section>
+        <!--Sumário-->
+        <section class="sumario">
+            <h1 class="grafico-titulo"> Explore Nossos Gráficos </h1>
+            <nav>
+                <a href="#PopulaçãoTotal"> Gráfico 1: População Total </a>
+                <a href="#CrescimentoPopulacional"> Gráfico 2: Crescimento Populacional </a>
+                <a href="#PirâmideEtária"> Gráfico 3: Pirâmide Etária </a>
+                <a href="#DensidadePopulacional"> Gráfico 4: Densidade Populacional </a>
+            </nav>
+        </section>
+
+        <section id="PopulaçãoTotal">
+            <h2>População Total</h2>
+            <div class="flex-container">
+                <!-- CORRIGIDO: Usando url_for para a imagem do gráfico -->
+                <img src="{{ url_for('static', filename='images/img1.png') }}"
+                    alt="Gráfico de barras mostrando a distribuição da população por bairros e regiões de São José dos Campos">
+                <div class="texto-e-botao-container">
+                    <p>A imagem apresentada ilustra a distribuição da população por bairros e regiões de São José dos
+                        Campos, oferecendo uma visão clara e detalhada sobre a demografia local.
+                    </p>
+                    <button class="button" style="vertical-align:middle"><span>Ver mais</span></button><!--Botão-->
+                </div>
+            </div>
+        </section>
+
+        <section id="CrescimentoPopulacional">
+            <h2>Crescimento Populacional</h2>
+            <div class="flex-container">
+                <!-- CORRIGIDO: Usando url_for para a imagem do gráfico -->
+                <img src="{{ url_for('static', filename='images/img2.png') }}"
+                    alt="Gráfico de barras mostrando a distribuição da população nos bairros da Região Leste">
+                <div class="texto-e-botao-container">
+                    <p>O gráfico ilustra o crescimento populacional ao longo dos anos, permitindo uma análise das
+                        tendências demográficas na área estudada.</p>
+                    <button class="button" style="vertical-align:middle"><span>Ver mais</span></button><!--Botão-->
+                </div>
+            </div>
+        </section>
+
+        <section id="PirâmideEtária">
+            <h2>Pirâmide Etária</h2>
+            <div class="flex-container">
+                <!-- CORRIGIDO: Usando url_for para a imagem do gráfico -->
+                <img src="{{ url_for('static', filename='images/img3.png') }}"
+                    alt="Gráfico de barras mostrando a pirâmide etária da população de São José dos Campos">
+                <div class="texto-e-botao-container">
+                    <p>O gráfico ilustra a pirâmide etária da população de São José dos Campos, permitindo uma análise
+                        das
+                        características demográficas da cidade.
+                    </p>
+                    <button class="button" style="vertical-align:middle"><span>Ver mais</span></button><!--Botão-->
+                </div>
+            </div>
+        </section>
+
+        <section id="separador">
+            <h2>Densidade Populacional</h2>
+            <section id="DensidadePopulacional">
+                <div class="flex-container">
+                    <!-- CORRIGIDO: Usando url_for para a imagem do gráfico -->
+                    <img src="{{ url_for('static', filename='images/img4.png') }}"
+                        alt="Gráfico de barras mostrando a distribuição da densidade populacional">
+                    <div class="texto-e-botao-container">
+                        <p>O gráfico ilustra a distribuição da densidade populacional, permitindo uma análise das áreas
+                            com maior e menor concentração de habitantes.
+                        </p>
+                        <button class="button" style="vertical-align:middle"><span>Ver mais</span></button><!--Botão-->
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <h3>© 2025 Omnidevs, Todos os direitos reservados &copy;</h3>
+        <a href="https://github.com/OmniDevsOficial/API-Censo-2022/tree/branch-sumario" target="_blank">
+            <!-- CORRIGIDO: Usando url_for para a imagem do GitHub -->
+            <img src="{{ url_for('static', filename='images/github.png') }}" alt="Link para o GitHub do projeto">
+        </a>
+    </footer>
+</body>
+
+</html>
+
