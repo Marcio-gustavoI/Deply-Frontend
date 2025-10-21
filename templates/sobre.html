@@ -7,12 +7,14 @@
     <title>Planeja SJC</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     <!-- Linkamento da estilazação CSS -->
-    <link rel="icon" type="image/png" href="static/images/brasao_64x64.png">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/brasao_64x64.png') }}">
 </head>
 
 <body>
     <header>
         <a href="{{ url_for('index') }}">
+            <img id="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="logo">
+        </a>
         <nav>
             <ul class="menu">
                 <li><a href="{{ url_for('index') }}">Home</a></li>
